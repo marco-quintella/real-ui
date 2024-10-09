@@ -2,25 +2,27 @@
 import { computed } from 'vue'
 
 const {
+  centerColor,
   color = 'primary',
-  min = 0,
+  indeterminate = false,
   max = 100,
+  min = 0,
+  reverse = false,
   size = 32,
   stroke = 4,
   underlay = true,
   value = 50,
-  centerColor,
-  reverse = false,
 } = defineProps<{
+  centerColor?: string
   color?: string
-  min?: number
+  indeterminate?: boolean
   max?: number
+  min?: number
+  reverse?: boolean
   size?: number
   stroke?: number
   underlay?: boolean | string
   value?: number
-  centerColor?: string
-  reverse?: boolean
 }>()
 
 const classes = computed(() => ({
@@ -40,7 +42,19 @@ const centerClasses = computed(() => ({
   [`text-${centerColor}`]: true,
 }))
 
+const overlayClasses = computed(() => ({
+  'mq-circular-progress--overlay': true,
+  'mq-circular-progress--indeterminate': indeterminate,
+}))
+
+const svgClasses = computed(() => ({
+  'mq-circular-progress--svg-spin': indeterminate,
+}))
+
 const length = computed(() => 2 * Math.PI * radius.value)
+const length50 = computed(() => -length.value / 4)
+const lengthTo = computed(() => -length.value)
+
 const filledLength = computed(() => length.value * (1 - value / max))
 </script>
 
@@ -53,6 +67,7 @@ const filledLength = computed(() => length.value * (1 - value / max))
     :aria-valuenow="value"
   >
     <svg
+      :class="svgClasses"
       xmlns="http://www.w3.org/2000/svg"
       view-box="0 0 100 100"
       transform="rotate(-90)"
@@ -81,7 +96,7 @@ const filledLength = computed(() => length.value * (1 - value / max))
       />
 
       <circle
-        class="mq-circular-progress--overlay"
+        :class="overlayClasses"
         cx="50%"
         cy="50%"
         :r="radius"
@@ -114,4 +129,40 @@ const filledLength = computed(() => length.value * (1 - value / max))
   &--center
     color: currentColor
     transition: color 0.3s ease
+
+  &--overlay.mq-circular-progress--indeterminate
+    animation: mq-circular-progress-indeterminate 1.5s ease-in-out infinite
+
+  &--svg-spin
+    transform-origin: 50% 50%
+    animation: mq-circular-progress-spin 2s linear infinite
+
+@keyframes mq-circular-progress-indeterminate
+  0%
+    stroke-dasharray: 1, v-bind(length)
+    stroke-dashoffset: 0
+
+  50%
+    stroke-dasharray: v-bind(length), v-bind(length)
+    stroke-dashoffset: v-bind(length50)
+
+  to
+    stroke-dasharray: v-bind(length), v-bind(length)
+    stroke-dashoffset: v-bind(lengthTo)
+
+@keyframes mq-circular-progress-spin
+  0%
+    transform: rotate3d(0,0,1,0)
+
+  25%
+    transform: rotate3d(0,0,1,90deg)
+
+  50%
+    transform: rotate3d(0,0,1,180deg)
+
+  75%
+    transform: rotate3d(0,0,1,270deg)
+
+  to
+    transform: rotate3d(0,0,1,359deg)
 </style>

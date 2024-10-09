@@ -103,6 +103,21 @@ import { MqCard, MqCardContent, MqCardTitle, MqCircularProgress } from '../../..
         />
       </MqCardContent>
     </MqCard>
+
+    <MqCard>
+      <MqCardTitle>
+        Indeterminate
+      </MqCardTitle>
+
+      <div class="horizontal">
+        <MqCircularProgress
+          :size="50"
+          :underlay="false"
+          :value="75"
+          indeterminate
+        />
+      </div>
+    </MqCard>
   </div>
 </template>
 
