@@ -2,12 +2,16 @@
 </script>
 
 <template>
-  <div class="mq-theme-light main">
+  <div class="main">
     <div class="menu">
       <div>Menu</div>
 
       <router-link to="/button">
         Button
+      </router-link>
+
+      <router-link to="/card">
+        Card
       </router-link>
     </div>
 
