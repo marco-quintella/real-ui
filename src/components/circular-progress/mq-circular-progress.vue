@@ -8,6 +8,9 @@ const {
   size = 32,
   stroke = 4,
   underlay = true,
+  value = 50,
+  centerColor,
+  reverse = false,
 } = defineProps<{
   color?: string
   min?: number
@@ -15,9 +18,10 @@ const {
   size?: number
   stroke?: number
   underlay?: boolean | string
+  value?: number
+  centerColor?: string
+  reverse?: boolean
 }>()
-
-const model = defineModel<number>({ default: 50 })
 
 const classes = computed(() => ({
   'mq-circular-progress': true,
@@ -31,8 +35,13 @@ const underlayColor = computed(() => typeof underlay === 'string'
   ? `text-${underlay}`
   : undefined)
 
+const centerClasses = computed(() => ({
+  'mq-circular-progress--center': true,
+  [`text-${centerColor}`]: true,
+}))
+
 const length = computed(() => 2 * Math.PI * radius.value)
-const filledLength = computed(() => length.value * (1 - model.value / max))
+const filledLength = computed(() => length.value * (1 - value / max))
 </script>
 
 <template>
@@ -41,7 +50,7 @@ const filledLength = computed(() => length.value * (1 - model.value / max))
     role="progressbar"
     :aria-valuemax="max"
     :aria-valuemin="min"
-    :aria-valuenow="model"
+    :aria-valuenow="value"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -62,6 +71,16 @@ const filledLength = computed(() => length.value * (1 - model.value / max))
       />
 
       <circle
+        v-if="centerColor"
+        :class="centerClasses"
+        cx="50%"
+        cy="50%"
+        :r="radius - stroke / 2"
+        fill="currentColor"
+        :stroke-width="0"
+      />
+
+      <circle
         class="mq-circular-progress--overlay"
         cx="50%"
         cy="50%"
@@ -69,7 +88,7 @@ const filledLength = computed(() => length.value * (1 - model.value / max))
         fill="transparent"
         :stroke-width="stroke"
         :stroke-dasharray="length"
-        :stroke-dashoffset="filledLength"
+        :stroke-dashoffset="reverse ? -filledLength : filledLength"
       />
     </svg>
   </div>
@@ -77,14 +96,13 @@ const filledLength = computed(() => length.value * (1 - model.value / max))
 
 <style lang="sass" scoped>
 .mq-circular-progress
-  width: v-bind(sizeInPx)
-  height: v-bind(sizeInPx)
-
   & > svg
     width: 100%
     height: 100%
     color: currentColor
     stroke: currentColor
+    width: v-bind(sizeInPx)
+    height: v-bind(sizeInPx)
 
   &--underlay
     color: rgba(var(--mq-theme-foreground-text), .12)
@@ -92,4 +110,8 @@ const filledLength = computed(() => length.value * (1 - model.value / max))
   &--overlay
     color: currentColor
     transition: stroke-dashoffset 0.3s ease
+
+  &--center
+    color: currentColor
+    transition: color 0.3s ease
 </style>
