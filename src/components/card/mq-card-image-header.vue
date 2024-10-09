@@ -16,7 +16,7 @@ const aspectRatio = computed(() => ratio ?? '16 / 9')
   </div>
 </template>
 
-<style lang="sass">
+<style lang="sass" scoped>
 .mq-card-image-header
   position: relative
   overflow: hidden

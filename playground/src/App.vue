@@ -13,6 +13,10 @@
       <router-link to="/card">
         Card
       </router-link>
+
+      <router-link to="/circular-progress">
+        Circular Progress
+      </router-link>w
     </div>
 
     <router-view />
