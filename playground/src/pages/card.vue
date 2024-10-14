@@ -37,6 +37,18 @@ import { RealCard, RealCardSection } from '../../../src'
           </div>
         </RealCardSection>
       </RealCard>
+
+      <RealCard border flat>
+        <RealCardSection>
+          <div style="font-size: 1.5rem; font-weight: bold;">
+            Cancun is back, better than ever!
+          </div>
+        </RealCardSection>
+
+        <RealCardSection style="padding-top: 0;">
+          Over a hundred Mexico resorts have reopened and the state tourism minister predicts Cancun will draw as many visitors in 2006 as it did two years ago.
+        </RealCardSection>
+      </RealCard>
     </div>
   </div>
 </template>

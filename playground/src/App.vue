@@ -18,6 +18,10 @@
         Circular Progress
       </router-link>
 
+      <router-link to="/separator">
+        Separator
+      </router-link>
+
       <router-link to="/spinner">
         Spinner
       </router-link>

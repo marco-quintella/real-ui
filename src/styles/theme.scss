@@ -38,6 +38,11 @@
   --real-theme-card-border-color: 0, 0, 0, 0.1;
   --real-theme-card-section-padding: 1rem;
 
-  background: rgb(var(--real-theme-background));
+  --real-theme-separator-color: 0, 0, 0, 0.12;
+  --real-theme-separator-width: 1px;
+  --real-theme-separator-inset-horizontal-margin: 1rem;
+  --real-theme-separator-inset-vertical-margin: 0.5rem;
+  --real-theme-separator-item-inset-margin: 4rem;
+  --real-theme-separator-item-thumbnail-inset-margin: 7rem background: rgb(var(--real-theme-background));
   color: rgb(var(--real-theme-background-text));
 }
