@@ -1,4 +1,8 @@
 .real-theme-light {
+  @import url(https://fonts.bunny.net/css?family=inter:300,400,500,600,700);
+
+  font-family: 'Inter', sans-serif;
+
   color-scheme: normal;
   --real-theme-primary: 115, 103, 240;
   --real-theme-primary-text: 255, 255, 255;
