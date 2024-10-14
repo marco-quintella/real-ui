@@ -1,39 +1,39 @@
 <script setup lang="ts">
-import { MqCard, MqCardContent, MqCardTitle, MqCircularProgress } from '../../../src'
+import { RealCard, RealCardContent, RealCardTitle, RealCircularProgress } from '../../../src'
 </script>
 
 <template>
   <div class="vertical">
-    <MqCard>
-      <MqCardTitle>
+    <RealCard>
+      <RealCardTitle>
         Color
-      </MqCardTitle>
+      </RealCardTitle>
 
-      <MqCardContent class="horizontal">
-        <MqCircularProgress
+      <RealCardContent class="horizontal">
+        <RealCircularProgress
           :size="50"
           :underlay="false"
           :value="75"
         />
-        <MqCircularProgress
+        <RealCircularProgress
           :size="90"
           :stroke="8"
           :value="35"
           center-color="secondary"
           color="info"
         />
-        <MqCircularProgress
+        <RealCircularProgress
           :size="45"
           :stroke="25"
           :value="60"
           color="success"
         />
-        <MqCircularProgress
+        <RealCircularProgress
           :size="50"
           :value="25"
           color="info"
         />
-        <MqCircularProgress
+        <RealCircularProgress
           :size="75"
           :stroke="25"
           :underlay="false"
@@ -41,29 +41,29 @@ import { MqCard, MqCardContent, MqCardTitle, MqCircularProgress } from '../../..
           center-color="secondary"
           color="warning"
         />
-        <MqCircularProgress
+        <RealCircularProgress
           :size="40"
           :stroke="8"
           :value="75"
           center-color="secondary"
           color="error"
         />
-      </MqCardContent>
-    </MqCard>
+      </RealCardContent>
+    </RealCard>
 
-    <MqCard>
-      <MqCardTitle>
+    <RealCard>
+      <RealCardTitle>
         Reverse
-      </MqCardTitle>
+      </RealCardTitle>
 
-      <MqCardContent class="horizontal">
-        <MqCircularProgress
+      <RealCardContent class="horizontal">
+        <RealCircularProgress
           :size="50"
           :underlay="false"
           :value="75"
           reverse
         />
-        <MqCircularProgress
+        <RealCircularProgress
           :size="90"
           :stroke="8"
           :value="35"
@@ -71,20 +71,20 @@ import { MqCard, MqCardContent, MqCardTitle, MqCircularProgress } from '../../..
           color="info"
           reverse
         />
-        <MqCircularProgress
+        <RealCircularProgress
           :size="45"
           :stroke="25"
           :value="60"
           color="success"
           reverse
         />
-        <MqCircularProgress
+        <RealCircularProgress
           :size="50"
           :value="25"
           color="info"
           reverse
         />
-        <MqCircularProgress
+        <RealCircularProgress
           :size="75"
           :stroke="25"
           :underlay="false"
@@ -93,7 +93,7 @@ import { MqCard, MqCardContent, MqCardTitle, MqCircularProgress } from '../../..
           color="warning"
           reverse
         />
-        <MqCircularProgress
+        <RealCircularProgress
           :size="40"
           :stroke="8"
           :value="75"
@@ -101,23 +101,23 @@ import { MqCard, MqCardContent, MqCardTitle, MqCircularProgress } from '../../..
           color="error"
           reverse
         />
-      </MqCardContent>
-    </MqCard>
+      </RealCardContent>
+    </RealCard>
 
-    <MqCard>
-      <MqCardTitle>
+    <RealCard>
+      <RealCardTitle>
         Indeterminate
-      </MqCardTitle>
+      </RealCardTitle>
 
-      <MqCardContent class="horizontal">
-        <MqCircularProgress
+      <RealCardContent class="horizontal">
+        <RealCircularProgress
           :size="50"
           :underlay="false"
           :value="75"
           indeterminate
         />
-      </MqCardContent>
-    </MqCard>
+      </RealCardContent>
+    </RealCard>
   </div>
 </template>
 
