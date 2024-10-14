@@ -21,5 +21,6 @@ declare module 'vue-router/auto-routes' {
     '/button': RouteRecordInfo<'/button', '/button', Record<never, never>, Record<never, never>>,
     '/card': RouteRecordInfo<'/card', '/card', Record<never, never>, Record<never, never>>,
     '/circular-progress': RouteRecordInfo<'/circular-progress', '/circular-progress', Record<never, never>, Record<never, never>>,
+    '/spinner': RouteRecordInfo<'/spinner', '/spinner', Record<never, never>, Record<never, never>>,
   }
 }

@@ -17,6 +17,10 @@
       <router-link to="/circular-progress">
         Circular Progress
       </router-link>
+
+      <router-link to="/spinner">
+        Spinner
+      </router-link>
     </div>
 
     <router-view />
