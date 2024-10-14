@@ -2,41 +2,48 @@
 import { computed } from 'vue'
 
 const {
-  variant = 'elevated',
+  tag = 'div',
+  square,
+  flat,
+  bordered,
 } = defineProps<{
-  variant?: 'elevated'
+  tag?: string
+  flat?: boolean
+  square?: boolean
+  bordered?: boolean
 }>()
 
 const classes = computed(() => ({
   'real-card': true,
-  'real-card--elevated': variant === 'elevated',
+  'real-card--bordered': bordered,
+  'real-card--flat': flat,
+  'real-card--square': square,
 }))
 </script>
 
 <template>
-  <div :class="classes">
+  <component :is="tag" :class="classes">
     <slot />
-  </div>
+  </component>
 </template>
 
 <style lang="scss">
 .real-card {
-  display: block;
-  overflow: hidden;
-  overflow-wrap: break-word;
+  box-shadow: var(--real-theme-card-shadow, 0 2px 4px rgba(0, 0, 0, 0.1));
+  border-radius: var(--real-theme-card-border-radius, 0.5rem);
+  background: rgba(var(--real-theme-card-background, '255, 255, 255'));
+  vertical-align: top;
   position: relative;
-  padding: 0;
-  text-decoration: none;
-  z-index: 0;
-  border-radius: var(--real-theme-card-border-radius);
 
-  &--elevated {
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-    will-change: box-shadow;
-    z-index: 1;
-    background: rgb(var(--real-theme-foreground));
-    color: rgb(var(--real-theme-foreground-text));
+  &--bordered {
+    border: 1px solid rgba(var(--real-theme-card-border-color, '0, 0, 0'));
+  }
+
+  > img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    border: 0;
   }
 }
 </style>

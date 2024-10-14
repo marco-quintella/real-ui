@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RealCard, RealCardContent, RealCardTitle, RealSpinner } from '../../../src'
+import { RealCard, RealCardSection, RealCardTitle, RealSpinner } from '../../../src'
 </script>
 
 <template>
@@ -11,11 +11,11 @@ import { RealCard, RealCardContent, RealCardTitle, RealSpinner } from '../../../
           Spinner
         </RealCardTitle>
 
-        <RealCardContent class="horizontal">
+        <RealCardSection class="horizontal">
           <RealSpinner />
           <RealSpinner :thickness="2" />
           <RealSpinner size="2em" :thickness="10" />
-        </RealCardContent>
+        </RealCardSection>
       </RealCard>
     </div>
   </div>

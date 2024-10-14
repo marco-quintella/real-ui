@@ -33,6 +33,10 @@
   --real-theme-general-border-radius: 6px;
 
   --real-theme-card-border-radius: var(--real-theme-general-border-radius);
+  --real-theme-card-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  --real-theme-card-background: var(--real-theme-foreground);
+  --real-theme-card-border-color: 0, 0, 0, 0.1;
+  --real-theme-card-section-padding: 1rem;
 
   background: rgb(var(--real-theme-background));
   color: rgb(var(--real-theme-background-text));

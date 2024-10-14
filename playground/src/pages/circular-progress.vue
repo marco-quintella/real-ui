@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RealCard, RealCardContent, RealCardTitle, RealCircularProgress } from '../../../src'
+import { RealCard, RealCardSection, RealCardTitle, RealCircularProgress } from '../../../src'
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import { RealCard, RealCardContent, RealCardTitle, RealCircularProgress } from '
         Color
       </RealCardTitle>
 
-      <RealCardContent class="horizontal">
+      <RealCardSection class="horizontal">
         <RealCircularProgress
           :size="50"
           :underlay="false"
@@ -48,7 +48,7 @@ import { RealCard, RealCardContent, RealCardTitle, RealCircularProgress } from '
           center-color="secondary"
           color="error"
         />
-      </RealCardContent>
+      </RealCardSection>
     </RealCard>
 
     <RealCard>
@@ -56,7 +56,7 @@ import { RealCard, RealCardContent, RealCardTitle, RealCircularProgress } from '
         Reverse
       </RealCardTitle>
 
-      <RealCardContent class="horizontal">
+      <RealCardSection class="horizontal">
         <RealCircularProgress
           :size="50"
           :underlay="false"
@@ -101,7 +101,7 @@ import { RealCard, RealCardContent, RealCardTitle, RealCircularProgress } from '
           color="error"
           reverse
         />
-      </RealCardContent>
+      </RealCardSection>
     </RealCard>
 
     <RealCard>
@@ -109,14 +109,14 @@ import { RealCard, RealCardContent, RealCardTitle, RealCircularProgress } from '
         Indeterminate
       </RealCardTitle>
 
-      <RealCardContent class="horizontal">
+      <RealCardSection class="horizontal">
         <RealCircularProgress
           :size="50"
           :underlay="false"
           :value="75"
           indeterminate
         />
-      </RealCardContent>
+      </RealCardSection>
     </RealCard>
   </div>
 </template>
