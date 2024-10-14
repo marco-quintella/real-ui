@@ -1,3 +1,3 @@
-import MqBtn from './mq-btn.vue'
+import RealBtn from './real-btn.vue'
 
-export { MqBtn }
+export { RealBtn }

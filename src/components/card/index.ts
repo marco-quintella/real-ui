@@ -1,6 +1,6 @@
-import MqCard from './mq-card.vue'
-import MqCardContent from './mq-card-content.vue'
-import MqCardImageHeader from './mq-card-image-header.vue'
-import MqCardTitle from './mq-card-title.vue'
+import RealCard from './real-card.vue'
+import RealCardContent from './real-card-content.vue'
+import RealCardImageHeader from './real-card-image-header.vue'
+import RealCardTitle from './real-card-title.vue'
 
-export { MqCard, MqCardContent, MqCardImageHeader, MqCardTitle }
+export { RealCard, RealCardContent, RealCardImageHeader, RealCardTitle }

@@ -16,7 +16,7 @@
 
       <router-link to="/circular-progress">
         Circular Progress
-      </router-link>w
+      </router-link>
     </div>
 
     <router-view />

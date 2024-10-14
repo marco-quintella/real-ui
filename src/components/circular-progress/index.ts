@@ -1,3 +1,3 @@
-import MqCircularProgress from './mq-circular-progress.vue'
+import RealCircularProgress from './real-circular-progress.vue'
 
-export { MqCircularProgress }
+export { RealCircularProgress }

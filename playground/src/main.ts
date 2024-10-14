@@ -7,7 +7,7 @@ import App from './App.vue'
 import '../../src/styles/theme.sass'
 import '../../src/styles/main.sass'
 
-setTheme('mq-theme-light')
+setTheme('real-theme-light')
 
 const router = createRouter({
   history: createWebHistory(),

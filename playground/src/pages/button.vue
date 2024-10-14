@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MqBtn } from '../../../src'
+import { RealBtn } from '../../../src'
 </script>
 
 <template>
@@ -9,29 +9,29 @@ import { MqBtn } from '../../../src'
       <p>The <code>color</code> prop is used to change background color.</p>
 
       <div class="horizontal">
-        <MqBtn>
+        <RealBtn>
           Primary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="secondary">
+        <RealBtn color="secondary">
           Secondary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="success">
+        <RealBtn color="success">
           Success
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="info">
+        <RealBtn color="info">
           Info
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="warning">
+        <RealBtn color="warning">
           Warning
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="error">
+        <RealBtn color="error">
           Error
-        </MqBtn>
+        </RealBtn>
       </div>
     </div>
 
@@ -40,29 +40,29 @@ import { MqBtn } from '../../../src'
       <p>The <code>outlined</code> prop is used to create outlined buttons.</p>
 
       <div class="horizontal">
-        <MqBtn variant="outlined">
+        <RealBtn variant="outlined">
           Primary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="secondary" variant="outlined">
+        <RealBtn color="secondary" variant="outlined">
           Secondary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="success" variant="outlined">
+        <RealBtn color="success" variant="outlined">
           Success
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="info" variant="outlined">
+        <RealBtn color="info" variant="outlined">
           Info
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="warning" variant="outlined">
+        <RealBtn color="warning" variant="outlined">
           Warning
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="error" variant="outlined">
+        <RealBtn color="error" variant="outlined">
           Error
-        </MqBtn>
+        </RealBtn>
       </div>
     </div>
 
@@ -71,29 +71,29 @@ import { MqBtn } from '../../../src'
       <p>The <code>flat</code> prop is used to create flat buttons.</p>
 
       <div class="horizontal">
-        <MqBtn variant="flat">
+        <RealBtn variant="flat">
           Primary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="secondary" variant="flat">
+        <RealBtn color="secondary" variant="flat">
           Secondary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="success" variant="flat">
+        <RealBtn color="success" variant="flat">
           Success
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="info" variant="flat">
+        <RealBtn color="info" variant="flat">
           Info
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="warning" variant="flat">
+        <RealBtn color="warning" variant="flat">
           Warning
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="error" variant="flat">
+        <RealBtn color="error" variant="flat">
           Error
-        </MqBtn>
+        </RealBtn>
       </div>
     </div>
 
@@ -102,21 +102,21 @@ import { MqBtn } from '../../../src'
       <p>Use <code>rounded</code> prop to control the border radius of the button.</p>
 
       <div class="horizontal">
-        <MqBtn>
+        <RealBtn>
           Normal Button
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn rounded="lg" color="secondary">
+        <RealBtn rounded="lg" color="secondary">
           Rounded Button
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn :rounded="0" color="success">
+        <RealBtn :rounded="0" color="success">
           Square Button
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn rounded="pill" color="info">
+        <RealBtn rounded="pill" color="info">
           Pill Button
-        </MqBtn>
+        </RealBtn>
       </div>
     </div>
 
@@ -125,29 +125,29 @@ import { MqBtn } from '../../../src'
       <p>Use <code>text</code> variant option to create text button. Text buttons have no box shadow and no background.</p>
 
       <div class="horizontal">
-        <MqBtn variant="text">
+        <RealBtn variant="text">
           Primary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="secondary" variant="text">
+        <RealBtn color="secondary" variant="text">
           Secondary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="success" variant="text">
+        <RealBtn color="success" variant="text">
           Success
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="info" variant="text">
+        <RealBtn color="info" variant="text">
           Info
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="warning" variant="text">
+        <RealBtn color="warning" variant="text">
           Warning
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="error" variant="text">
+        <RealBtn color="error" variant="text">
           Error
-        </MqBtn>
+        </RealBtn>
       </div>
     </div>
 
@@ -156,29 +156,29 @@ import { MqBtn } from '../../../src'
       <p>Use <code>plain</code> variant to create a plain button. Plain buttons have a lower baseline opacity that reacts to hover and focus.</p>
 
       <div class="horizontal">
-        <MqBtn variant="plain">
+        <RealBtn variant="plain">
           Primary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="secondary" variant="plain">
+        <RealBtn color="secondary" variant="plain">
           Secondary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="success" variant="plain">
+        <RealBtn color="success" variant="plain">
           Success
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="info" variant="plain">
+        <RealBtn color="info" variant="plain">
           Info
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="warning" variant="plain">
+        <RealBtn color="warning" variant="plain">
           Warning
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="error" variant="plain">
+        <RealBtn color="error" variant="plain">
           Error
-        </MqBtn>
+        </RealBtn>
       </div>
     </div>
 
@@ -187,29 +187,29 @@ import { MqBtn } from '../../../src'
       <p>Use <code>tonal</code> variant option to create a light background button.</p>
 
       <div class="horizontal">
-        <MqBtn variant="tonal">
+        <RealBtn variant="tonal">
           Primary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="secondary" variant="tonal">
+        <RealBtn color="secondary" variant="tonal">
           Secondary
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="success" variant="tonal">
+        <RealBtn color="success" variant="tonal">
           Success
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="info" variant="tonal">
+        <RealBtn color="info" variant="tonal">
           Info
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="warning" variant="tonal">
+        <RealBtn color="warning" variant="tonal">
           Warning
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn color="error" variant="tonal">
+        <RealBtn color="error" variant="tonal">
           Error
-        </MqBtn>
+        </RealBtn>
       </div>
     </div>
 
@@ -218,25 +218,25 @@ import { MqBtn } from '../../../src'
       <p>Buttons can be given different sizing options to fit a multitude of scenarios</p>
 
       <div class="horizontal">
-        <MqBtn size="xs">
+        <RealBtn size="xs">
           Extra Small
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn size="sm">
+        <RealBtn size="sm">
           Small
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn size="md">
+        <RealBtn size="md">
           Medium
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn size="lg">
+        <RealBtn size="lg">
           Large
-        </MqBtn>
+        </RealBtn>
 
-        <MqBtn size="xl">
+        <RealBtn size="xl">
           Extra Large
-        </MqBtn>
+        </RealBtn>
       </div>
     </div>
   </div>

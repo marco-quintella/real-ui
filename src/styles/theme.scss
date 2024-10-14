@@ -1,0 +1,35 @@
+.real-theme-light {
+  color-scheme: normal;
+  --real-theme-primary: 115, 103, 240;
+  --real-theme-primary-text: 255, 255, 255;
+  --real-hover-opacity: 0.06;
+  --real-focus-opacity: 0.12;
+
+  --real-theme-secondary: 158, 158, 158;
+  --real-theme-secondary-text: 255, 255, 255;
+
+  --real-theme-success: 0, 200, 83;
+  --real-theme-success-text: 255, 255, 255;
+
+  --real-theme-info: 0, 122, 255;
+  --real-theme-info-text: 255, 255, 255;
+
+  --real-theme-warning: 255, 159, 67;
+  --real-theme-warning-text: 255, 255, 255;
+
+  --real-theme-error: 255, 69, 58;
+  --real-theme-error-text: 255, 255, 255;
+
+  --real-theme-background: 240, 240, 240;
+  --real-theme-background-text: 5, 5, 5;
+
+  --real-theme-foreground: 255, 255, 255;
+  --real-theme-foreground-text: 47, 43, 61;
+
+  --real-theme-general-border-radius: 6px;
+
+  --real-theme-card-border-radius: var(--real-theme-general-border-radius);
+
+  background: rgb(var(--real-theme-background));
+  color: rgb(var(--real-theme-background-text));
+}

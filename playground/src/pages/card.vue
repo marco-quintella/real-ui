@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { MqCard, MqCardContent, MqCardImageHeader, MqCardTitle } from '../../../src'
+import { RealCard, RealCardContent, RealCardImageHeader, RealCardTitle } from '../../../src'
 </script>
 
 <template>
   <div>
     <h1>Cards</h1>
     <div>
-      <MqCard>
-        <MqCardImageHeader src="https://picsum.photos/200" />
+      <RealCard>
+        <RealCardImageHeader src="https://picsum.photos/200" />
 
-        <MqCardTitle>
+        <RealCardTitle>
           Influencing the influencer
-        </MqCardTitle>
+        </RealCardTitle>
 
-        <MqCardContent>
+        <RealCardContent>
           Cancun is back, better than ever! Over a hundred Mexico resorts have reopened and the state tourism minister predicts Cancun will draw as many visitors in 2006 as it did two years ago.
-        </MqCardContent>
-      </MqCard>
+        </RealCardContent>
+      </RealCard>
     </div>
   </div>
 </template>

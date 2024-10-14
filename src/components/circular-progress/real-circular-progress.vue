@@ -26,7 +26,7 @@ const {
 }>()
 
 const classes = computed(() => ({
-  'mq-circular-progress': true,
+  'real-circular-progress': true,
   [`text-${color}`]: true,
 }))
 
@@ -38,17 +38,17 @@ const underlayColor = computed(() => typeof underlay === 'string'
   : undefined)
 
 const centerClasses = computed(() => ({
-  'mq-circular-progress--center': true,
+  'real-circular-progress--center': true,
   [`text-${centerColor}`]: true,
 }))
 
 const overlayClasses = computed(() => ({
-  'mq-circular-progress--overlay': true,
-  'mq-circular-progress--indeterminate': indeterminate,
+  'real-circular-progress--overlay': true,
+  'real-circular-progress--indeterminate': indeterminate,
 }))
 
 const svgClasses = computed(() => ({
-  'mq-circular-progress--svg-spin': indeterminate,
+  'real-circular-progress--svg-spin': indeterminate,
 }))
 
 const length = computed(() => 2 * Math.PI * radius.value)
@@ -74,7 +74,7 @@ const filledLength = computed(() => length.value * (1 - value / max))
     >
       <circle
         v-if="!!underlay"
-        class="mq-circular-progress--underlay"
+        class="real-circular-progress--underlay"
         :class="underlayColor"
         cx="50%"
         cy="50%"
@@ -109,60 +109,77 @@ const filledLength = computed(() => length.value * (1 - value / max))
   </div>
 </template>
 
-<style lang="sass" scoped>
-.mq-circular-progress
-  & > svg
-    width: 100%
-    height: 100%
-    color: currentColor
-    stroke: currentColor
-    width: v-bind(sizeInPx)
-    height: v-bind(sizeInPx)
+<style lang="scss" scoped>
+.real-circular-progress {
+  & > svg {
+    width: 100%;
+    height: 100%;
+    color: currentColor;
+    stroke: currentColor;
+    width: v-bind(sizeInPx);
+    height: v-bind(sizeInPx);
+  }
 
-  &--underlay
-    color: rgba(var(--mq-theme-foreground-text), .12)
+  &--underlay {
+    color: rgba(var(--real-theme-foreground-text), 0.12);
+  }
 
-  &--overlay
-    color: currentColor
-    transition: stroke-dashoffset 0.3s ease
+  &--overlay {
+    color: currentColor;
+    transition: stroke-dashoffset 0.3s ease;
+  }
 
-  &--center
-    color: currentColor
-    transition: color 0.3s ease
+  &--center {
+    color: currentColor;
+    transition: color 0.3s ease;
+  }
 
-  &--overlay.mq-circular-progress--indeterminate
-    animation: mq-circular-progress-indeterminate 1.5s ease-in-out infinite
+  &--overlay.real-circular-progress--indeterminate {
+    animation: real-circular-progress-indeterminate 1.5s ease-in-out infinite;
+  }
 
-  &--svg-spin
-    transform-origin: 50% 50%
-    animation: mq-circular-progress-spin 2s linear infinite
+  &--svg-spin {
+    transform-origin: 50% 50%;
+    animation: real-circular-progress-spin 2s linear infinite;
+  }
+}
 
-@keyframes mq-circular-progress-indeterminate
-  0%
-    stroke-dasharray: 1, v-bind(length)
-    stroke-dashoffset: 0
+@keyframes real-circular-progress-indeterminate {
+  0% {
+    stroke-dasharray: 1, v-bind(length);
+    stroke-dashoffset: 0;
+  }
 
-  50%
-    stroke-dasharray: v-bind(length), v-bind(length)
-    stroke-dashoffset: v-bind(length50)
+  50% {
+    stroke-dasharray: v-bind(length), v-bind(length);
+    stroke-dashoffset: v-bind(length50);
+  }
 
-  to
-    stroke-dasharray: v-bind(length), v-bind(length)
-    stroke-dashoffset: v-bind(lengthTo)
+  to {
+    stroke-dasharray: v-bind(length), v-bind(length);
+    stroke-dashoffset: v-bind(lengthTo);
+  }
+}
 
-@keyframes mq-circular-progress-spin
-  0%
-    transform: rotate3d(0,0,1,0)
+@keyframes real-circular-progress-spin {
+  0% {
+    transform: rotate3d(0, 0, 1, 0);
+  }
 
-  25%
-    transform: rotate3d(0,0,1,90deg)
+  25% {
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
 
-  50%
-    transform: rotate3d(0,0,1,180deg)
+  50% {
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
 
-  75%
-    transform: rotate3d(0,0,1,270deg)
+  75% {
+    transform: rotate3d(0, 0, 1, 270deg);
+  }
 
-  to
-    transform: rotate3d(0,0,1,359deg)
+  to {
+    transform: rotate3d(0, 0, 1, 359deg);
+  }
+}
 </style>
