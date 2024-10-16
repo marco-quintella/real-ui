@@ -277,7 +277,7 @@ const borderRadius = computed(() => {
   }
 
   &--tonal {
-    --real-background-opacity: 0.15;
+    --real-background-opacity: 0.15 !important;
   }
 
   &--tonal:hover {
