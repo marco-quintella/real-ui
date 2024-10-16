@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RealBtn } from '../../../src'
+import { RealBtn } from 'real-ui-dev'
 </script>
 
 <template>

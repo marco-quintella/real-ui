@@ -1,4 +1,4 @@
 packages:
-  - playground
+  - dev-env
   - docs
   - packages/*

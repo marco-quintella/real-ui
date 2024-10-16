@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RealCard, RealCardSection, RealCardTitle, RealCircularProgress } from '../../../src'
+import { RealCard, RealCardSection, RealCardTitle, RealCircularProgress } from 'real-ui-dev'
 </script>
 
 <template>
