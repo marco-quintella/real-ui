@@ -17,6 +17,7 @@ export default defineConfig({
     alias: {
       'real-ui-dev/': `${path.resolve(__dirname)}/../packages/ui/src/`,
       'real-ui-dev': `${path.resolve(__dirname)}/../packages/ui/src/index.ts`,
+      'light-theme': `${path.resolve(__dirname)}/../packages/light-theme/dist/light-theme.css`,
     }
   }
 })

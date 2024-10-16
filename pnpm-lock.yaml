@@ -18,6 +18,34 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
 
+  dev-env:
+    dependencies:
+      vue:
+        specifier: ^3.4.37
+        version: 3.5.12(typescript@5.6.3)
+      vue-router:
+        specifier: ^4.4.5
+        version: 4.4.5(vue@3.5.12(typescript@5.6.3))
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.1.2
+        version: 5.1.4(vite@5.4.9(@types/node@22.7.5)(sass@1.79.5))(vue@3.5.12(typescript@5.6.3))
+      sass:
+        specifier: ^1.79.4
+        version: 1.79.5
+      typescript:
+        specifier: ^5.5.3
+        version: 5.6.3
+      unplugin-vue-router:
+        specifier: ^0.10.8
+        version: 0.10.8(rollup@4.24.0)(vue-router@4.4.5(vue@3.5.12(typescript@5.6.3)))(vue@3.5.12(typescript@5.6.3))
+      vite:
+        specifier: ^5.4.1
+        version: 5.4.9(@types/node@22.7.5)(sass@1.79.5)
+      vue-tsc:
+        specifier: ^2.0.29
+        version: 2.1.6(typescript@5.6.3)
+
   docs:
     dependencies:
       real-ui:
@@ -39,6 +67,15 @@ importers:
       vitepress:
         specifier: ^1.4.1
         version: 1.4.1(@algolia/client-search@4.24.0)(@types/node@22.7.5)(postcss@8.4.47)(sass@1.79.5)(search-insights@2.17.2)(typescript@5.6.3)
+
+  packages/light-theme:
+    devDependencies:
+      sass:
+        specifier: ^1.79.4
+        version: 1.79.5
+      unbuild:
+        specifier: ^2.0.0
+        version: 2.0.0(sass@1.79.5)(typescript@5.6.3)(vue-tsc@2.1.6(typescript@5.6.3))
 
   packages/ui:
     dependencies:

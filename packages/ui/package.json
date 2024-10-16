@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "description": "",
   "author": "Marco Quintella (2om.marco.quintella@gmail.com)",
-  "license": "MIT",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

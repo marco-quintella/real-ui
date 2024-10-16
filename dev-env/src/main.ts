@@ -5,7 +5,7 @@ import { setTheme } from '../../packages/ui/src'
 import App from './App.vue'
 
 import 'real-ui-dev/styles/main.scss'
-import 'real-ui-dev/styles/theme.scss'
+import 'light-theme'
 
 setTheme('real-theme-light')
 

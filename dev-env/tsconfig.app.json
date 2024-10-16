@@ -25,6 +25,9 @@
       ],
       "real-ui-dev/*": [
         "../packages/ui/src/*"
+      ],
+      "light-theme": [
+        "../packages/light-theme/dist/light-theme.css"
       ]
     }
   },
