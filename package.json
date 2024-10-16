@@ -1,39 +1,25 @@
 {
-  "name": "real-ui",
+  "name": "@real-ui/monorepo",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@9.12.1",
   "description": "",
-  "author": "Marco Quintella (2om.marco.quintella@gmail.com)",
-  "license": "MIT",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src",
-    "tsconfig.json"
-  ],
+  "main": "index.js",
   "scripts": {
-    "prepack": "unbuild",
-    "release": "changelogen --release && npm publish --access public && git push --follow-tags"
-  },
-  "dependencies": {
-    "ofetch": "^1.4.0",
-    "vue": "^3.5.8"
+    "clean": "rimraf packages/*/dist --glob",
+    "docs:dev": "pnpm -C docs run dev",
+    "docs:build": "pnpm -C docs run build",
+    "docs:preview": "pnpm -C docs run preview",
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm lint --fix",
+    "build": "pnpm clean && pnpm -r --filter=./packages/* run build"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.7.3",
-    "changelogen": "^0.5.7",
-    "eslint": "^9.11.1",
-    "eslint-plugin-format": "^0.1.2",
-    "fs-extra": "^11.2.0",
-    "sass": "^1.79.4",
-    "typescript": "^5.6.2",
-    "unbuild": "^2.0.0"
-  }
+    "@types/node": "^22.7.5",
+    "real-ui": "workspace:*",
+    "rimraf": "^6.0.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
 }
