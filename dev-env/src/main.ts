@@ -4,6 +4,8 @@ import { routes } from 'vue-router/auto-routes'
 import { setTheme } from '../../packages/ui/src'
 import App from './App.vue'
 
+import 'virtual:uno.css'
+
 import 'real-ui-dev/styles/main.scss'
 import 'light-theme'
 

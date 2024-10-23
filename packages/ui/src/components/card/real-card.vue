@@ -45,5 +45,20 @@ const classes = computed(() => ({
     max-width: 100%;
     border: 0;
   }
+
+  > div,
+  > img {
+    &:first-child {
+      border-top: 0;
+      border-top-right-radius: inherit;
+      border-top-left-radius: inherit;
+    }
+
+    &:last-child {
+      border-bottom: 0;
+      border-bottom-right-radius: inherit;
+      border-bottom-left-radius: inherit;
+    }
+  }
 }
 </style>
