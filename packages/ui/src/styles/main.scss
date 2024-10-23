@@ -160,3 +160,27 @@ textarea {
 .border-error {
   border-color: rgb(var(--real-theme-error)) !important;
 }
+
+.real-transition {
+  &--fade {
+    &-enter-active,
+    &-leave-active {
+      --real-transition-duration: 0.3s;
+      --real-transition-easing: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    &-leave-active {
+      position: absolute;
+    }
+  }
+
+  &--fade {
+    &-enter-active,
+    &-leave-active {
+      transition: opacity var(--real-transition-duration) ease-out;
+    }
+    &-enter-from,
+    &-leave-to {
+      opacity: 0;
+    }
+  }
+}

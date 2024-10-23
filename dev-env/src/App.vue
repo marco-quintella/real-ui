@@ -18,6 +18,10 @@
         Circular Progress
       </router-link>
 
+      <router-link to="/img">
+        Img
+      </router-link>
+
       <router-link to="/separator">
         Separator
       </router-link>
