@@ -8,9 +8,10 @@
       />
 
       <real-img
-        src="https://picsum.photos/200/200"
-        :ratio="16/9"
-        class="w-500px"
+        src="https://picsum.photos/500"
+        :ratio="1"
+        class="w-150px"
+        placeholder-src="https://img.pokemondb.net/artwork/large/pikachu.jpg"
       />
     </div>
   </div>

@@ -4,9 +4,11 @@ import { type RatioProps, useRatio } from '../../composables'
 import { useTimeout } from '../../composables/timeout'
 import { RealSpinner } from '../spinner'
 
-const { src, alt, ratio } = defineProps<{
+const { src, alt, ratio, srcset, placeholderSrc } = defineProps<{
   alt?: string
   src?: string
+  srcset?: string
+  placeholderSrc?: string
 } & RatioProps>()
 
 const emit = defineEmits<{
@@ -21,7 +23,16 @@ const isLoaded = ref(false)
 const isLoading = ref(false)
 const hasError = ref(false)
 
-const image = ref<string>()
+const image = ref<{
+  src?: string
+  srcset?: string
+}>()
+
+const placeholderImg = computed(() => placeholderSrc
+  ? {
+      src: placeholderSrc,
+    }
+  : undefined)
 
 const { registerTimeout: registerLoadTimeout, removeTimeout: removeLoadTimeout } = useTimeout()
 
@@ -86,39 +97,48 @@ function onError(err: Event) {
   removeLoadTimeout()
   hasError.value = true
   isLoaded.value = false
+
+  image.value = placeholderImg.value
+
   clearLoading()
   emit('error', err)
 }
 
-watch(() => src, () => {
+watch([() => src, () => srcset], () => {
   removeLoadTimeout()
   hasError.value = false
 
-  if (!src) {
+  if (!src && !srcset) {
     clearLoading()
+    image.value = placeholderImg.value
   }
   else {
     setLoading()
   }
 
-  image.value = src
+  image.value = {
+    src,
+    srcset,
+  }
 }, { immediate: true })
 </script>
 
 <template>
   <div :class="classes" :style="styles" role="img" :aria-label="alt">
     <div v-if="ratioStyle" :style="ratioStyle" />
-    <div class="real-img__container">
+    <div v-if="image" class="real-img__container">
       <img
         :alt="alt"
         :class="imgClasses"
-        :src="src"
+        :src="image?.src"
+        :srcset="image?.srcset"
         :style="imgStyles"
         aria-hidden="true"
         @error="onError"
         @load="onLoad"
       >
     </div>
+
     <transition name="real-transition--fade">
       <div v-if="!isLoading" class="real-img__content">
         <slot v-if="hasError" name="error" />
