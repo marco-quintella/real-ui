@@ -6,21 +6,37 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "pnpm clean && pnpm build:packages && pnpm build:docs",
+    "build:packages": "pnpm -r --filter=./packages/* run build",
+    "build:docs": "pnpm -C docs run build",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "clean": "rimraf packages/*/dist --glob",
-    "docs:dev": "pnpm -C docs run dev",
-    "docs:build": "pnpm -C docs run build",
-    "docs:preview": "pnpm -C docs run preview",
     "dev": "pnpm -C dev-env run dev",
-    "lint": "eslint --cache .",
-    "lint:fix": "pnpm lint --fix",
-    "build": "pnpm clean && pnpm -r --filter=./packages/* run build"
+    "docs:build": "pnpm -C docs run build",
+    "docs:dev": "pnpm -C docs run dev",
+    "docs:preview": "pnpm -C docs run preview",
+    "lint:fix": "eslint --fix .",
+    "lint": "eslint .",
+    "postinstall": "npx simple-git-hooks",
+    "preinstall": "npx only-allow pnpm",
+    "reset": "pnpm store prune && rm -rf node_modules pnpm-lock.yaml **/node_modules **/pnpm-lock.yaml",
+    "typecheck": "vue-tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
+    "conventional-changelog-cli": "^5.0.0",
+    "esno": "^4.8.0",
+    "lint-staged": "^15.2.10",
     "real-ui": "workspace:*",
-    "rimraf": "^6.0.1"
+    "rimraf": "^6.0.1",
+    "simple-git-hooks": "^2.11.1"
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "simple-git-hooks": {
+    "hooks": {
+      "pre-commit": "pnpm lint-staged"
+    }
+  }
 }

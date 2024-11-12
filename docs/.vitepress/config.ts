@@ -10,6 +10,8 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
 
+  outDir: './dist',
+
   themeConfig: {
     search: {
       provider: 'local',

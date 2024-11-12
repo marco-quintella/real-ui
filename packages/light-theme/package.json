@@ -8,7 +8,8 @@
     "./dist/light-theme.css": "./dist/light-theme.css"
   },
   "scripts": {
-    "build": "unbuild"
+    "clean": "rimraf dist",
+    "build": "pnpm clean && pnpm unbuild"
   },
   "keywords": [],
   "devDependencies": {

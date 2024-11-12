@@ -9,7 +9,6 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs"
     },
-    "./dist/styles/theme.css": "./dist/styles/theme.css",
     "./dist/styles/main.css": "./dist/styles/main.css"
   },
   "main": "dist/index.mjs",
@@ -20,7 +19,8 @@
     "tsconfig.json"
   ],
   "scripts": {
-    "build": "unbuild",
+    "clean": "rimraf dist",
+    "build": "pnpm clean && pnpm unbuild",
     "release": "changelogen --release && npm publish --access public && git push --follow-tags"
   },
   "dependencies": {
