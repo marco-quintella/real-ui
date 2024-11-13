@@ -4,6 +4,7 @@
   "description": "",
   "author": "Marco Quintella (2om.marco.quintella@gmail.com)",
   "license": "MIT",
+  "keywords": [],
   "exports": {
     "./dist/light-theme.css": "./dist/light-theme.css"
   },
@@ -11,7 +12,6 @@
     "clean": "rimraf dist",
     "build": "pnpm clean && pnpm unbuild"
   },
-  "keywords": [],
   "devDependencies": {
     "sass": "^1.79.4",
     "unbuild": "^2.0.0"

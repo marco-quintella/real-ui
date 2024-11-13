@@ -13,8 +13,8 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "real-ui": "workspace:*",
-    "@real-ui/light-theme": "workspace:*"
+    "@real-ui/light-theme": "workspace:*",
+    "real-ui": "workspace:*"
   },
   "devDependencies": {
     "sass": "^1.79.4",

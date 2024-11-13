@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "packageManager": "pnpm@9.12.1",
   "description": "",
+  "author": "",
+  "license": "MIT",
+  "keywords": [],
   "main": "index.js",
   "scripts": {
     "build:docs": "pnpm -C docs run build",
@@ -25,8 +28,13 @@
     "release": "pnpm bumpp -r -x \"pnpm run changelog\" --all && pnpm -r publish && tsx scripts/release.ts"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^3.8.0",
     "@types/node": "^22.7.5",
+    "@unocss/eslint-plugin": "^0.62.4",
+    "bumpp": "^9.8.1",
     "conventional-changelog-cli": "^5.0.0",
+    "eslint": "^9.12.0",
+    "eslint-plugin-format": "^0.1.2",
     "esno": "^4.8.0",
     "lint-staged": "^15.2.10",
     "real-ui": "workspace:*",
@@ -34,10 +42,10 @@
     "simple-git": "^3.27.0",
     "simple-git-hooks": "^2.11.1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }

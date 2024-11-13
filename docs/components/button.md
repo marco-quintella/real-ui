@@ -10,7 +10,6 @@ import { RealBtn, RealCard } from 'real-ui'
 
 Real Button is a button with many usefull features.
 
-
 ## Usage
 
 ### Standard
@@ -23,4 +22,3 @@ Real Button is a button with many usefull features.
 <real-btn color="warning">Warning</real-btn>
 <real-btn color="error">Error</real-btn>
 </real-card>
-
